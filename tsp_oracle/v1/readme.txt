@@ -1,0 +1,1 @@
+ATTENTION! This is v1 version, not recommended for use, serves only as an example for comparison with tsp_oracle_v2.go
