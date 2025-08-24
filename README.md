@@ -1,4 +1,4 @@
-# Exact TSP Solver (TSP ORACLE) [Go] <sup>v0.1.1</sup>
+# Exact TSP Solver (TSP ORACLE) [Go] <sup>v0.1.3</sup>
 
 ---
 
@@ -104,8 +104,7 @@ A commercial license is **required** for:
 - Integrating this software into proprietary products
 - Using it in internal operations within a company
 - SaaS and hosted services that incorporate this software
-
-**Important:** The commercial license provides usage rights but **does not include any indemnification or liability**. The software is provided "AS IS" without any warranties as described in the full license agreement.
+- Obtaining priority support and indemnification
 
 **To obtain a commercial license,** please contact us directly at:  
 📧 **smartlegiondev@gmail.com**
