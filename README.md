@@ -8,6 +8,15 @@ find the globally optimal solution for small to medium-sized TSP instances.
 
 ---
 
+![GitHub top language](https://img.shields.io/github/languages/top/smartlegionlab/exact-tsp-solver)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/smartlegionlab/exact-tsp-solver)](https://github.com/smartlegionlab/exact-tsp-solver/)
+[![GitHub](https://img.shields.io/github/license/smartlegionlab/exact-tsp-solver)](https://github.com/smartlegionlab/exact-tsp-solver/blob/master/LICENSE)
+[![GitHub Repo stars](https://img.shields.io/github/stars/smartlegionlab/exact-tsp-solver?style=social)](https://github.com/smartlegionlab/exact-tsp-solver/)
+[![GitHub watchers](https://img.shields.io/github/watchers/smartlegionlab/exact-tsp-solver?style=social)](https://github.com/smartlegionlab/exact-tsp-solver/)
+[![GitHub forks](https://img.shields.io/github/forks/smartlegionlab/exact-tsp-solver?style=social)](https://github.com/smartlegionlab/exact-tsp-solver/)
+
+---
+
 > **Disclaimer:** The TSP is NP-Hard. This solver is designed for **educational and research purposes** 
 > and is practical for instances up to ~20-35 points on standard hardware. 
 > For larger instances, consider heuristic approaches.
