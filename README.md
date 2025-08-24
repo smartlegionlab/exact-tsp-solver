@@ -78,9 +78,21 @@ go run tsp_oracle/v1/tsp_oracle_v1.go -n 10 -seed 123
 *   Passionate about pushing the boundaries of algorithmic optimization.
 *   This solver was developed to bridge the gap between theoretical computer science and practical implementation.
 
-## 📄 License
+## 📜 Licensing
 
-This project is licensed under the **BSD 3-Clause License** - see the LICENSE file for details. This license allows academic and commercial use while protecting the author's name from unauthorized endorsement.
+This project uses a dual licensing system:
+
+### 🆓 BSD 3-Clause License
+- For non-commercial use
+- For academic and research purposes
+- For open-source projects
+
+### 💼 Commercial License
+- For commercial products and services
+- For enterprises using the code in proprietary solutions
+- For additional features and support
+
+**To obtain a commercial license:** [smartlegiondev@gmail.com](mailto:smartlegiondev@gmail.com)
 
 ---
 
