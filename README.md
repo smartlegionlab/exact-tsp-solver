@@ -1,4 +1,4 @@
-# Exact TSP Solver (TSP ORACLE) [Go] <sup>v0.1.4</sup>
+# Exact TSP Solver (TSP ORACLE) [Go] <sup>v0.1.5</sup>
 
 ---
 
