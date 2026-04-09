@@ -1,4 +1,4 @@
-// Copyright © 2025 Alexander Suvorov. All rights reserved.
+// Copyright © 2026 Alexander Suvorov. All rights reserved.
 package main
 
 import (
@@ -376,7 +376,7 @@ func (t *TSPSolver) adaptiveSearch() ([]int, float64) {
 	bestDist := greedyDist
 	foundAny := false
 
-	fmt.Printf("   🎯 We start the search from %.2f (90.0%%)\n", currentThreshold)
+	fmt.Printf("   We start the search from %.2f (90.0%%)\n", currentThreshold)
 
 	for iteration := 0; iteration < 200; iteration++ {
 		t.bestPath = make([]int, 0)
@@ -387,7 +387,7 @@ func (t *TSPSolver) adaptiveSearch() ([]int, float64) {
 		visited := make([]bool, t.numPoints)
 		visited[0] = true
 
-		fmt.Printf("   🔍 Threshold: %.2f (%.1f%%)... ", currentThreshold, (currentThreshold/greedyDist)*100)
+		fmt.Printf("   Threshold: %.2f (%.1f%%)... ", currentThreshold, (currentThreshold/greedyDist)*100)
 
 		startTime := time.Now()
 		t.bruteForceRecursive([]int{0}, 0.0, visited)
@@ -405,20 +405,20 @@ func (t *TSPSolver) adaptiveSearch() ([]int, float64) {
 			fmt.Printf("✗ cut off (%v)\n", searchTime.Round(time.Millisecond))
 
 			if foundAny {
-				fmt.Printf("   🏆 The optimum has been found.: %.2f\n", bestDist)
+				fmt.Printf("   The optimum has been found.: %.2f\n", bestDist)
 				return bestPath, bestDist
 			} else {
 				currentThreshold = currentThreshold * (1.0 + step)
 
 				if currentThreshold >= greedyDist {
-					fmt.Printf("   ⚠️  No better solutions than greedy found\n")
+					fmt.Printf("   No better solutions than greedy found\n")
 					return greedyPath, greedyDist
 				}
 			}
 		}
 	}
 
-	fmt.Printf("   🏆 Best found: %.2f\n", bestDist)
+	fmt.Printf("   Best found: %.2f\n", bestDist)
 	return bestPath, bestDist
 }
 
@@ -500,7 +500,7 @@ func (t *TSPSolver) bruteForce() ([]int, float64, time.Duration) {
 
 	fmt.Println("1. Launching the multi-start greedy algorithm...")
 	t.greedyPath, t.greedyDistance = t.multiStartGreedy()
-	fmt.Printf("   ✅ Multi-start greedy + 2-opt: length = %.2f\n", t.greedyDistance)
+	fmt.Printf("   Multi-start greedy + 2-opt: length = %.2f\n", t.greedyDistance)
 
 	fmt.Println("2. Launching adaptive search...")
 	optimalPath, optimalDist := t.adaptiveSearch()
@@ -556,7 +556,7 @@ func main() {
 
 	if *numPoints > 25 {
 		totalPerms := calculateTotalPermutations(*numPoints - 1)
-		fmt.Printf("⚠️  WARNING: for %d points there will be approximately %s permutations\n",
+		fmt.Printf("WARNING: for %d points there will be approximately %s permutations\n",
 			*numPoints, formatLargeNumber(totalPerms))
 		fmt.Printf("This may take a considerable amount of time.\n")
 		fmt.Print("Continue? (y/n): ")
@@ -571,18 +571,18 @@ func main() {
 	solver := NewTSPSolver(*numPoints, *seed)
 
 	fmt.Println("==================================================")
-	fmt.Printf("🚀 TSP SOLVER (ORACLE v2) - %d POINTS\n", *numPoints)
-	fmt.Printf("🔢 SEED: %d\n", *seed)
+	fmt.Printf("TSP SOLVER (ORACLE v2) - %d POINTS\n", *numPoints)
+	fmt.Printf("SEED: %d\n", *seed)
 	fmt.Println("==================================================")
 
-	fmt.Println("\n📍 Coordinates of points:")
+	fmt.Println("\nCoordinates of points:")
 	for i, point := range solver.points {
 		fmt.Printf("   Dot %d: (%.2f, %.2f)\n", i, point.X, point.Y)
 	}
 
 	brutePath, bruteDistance, elapsed := solver.bruteForce()
 
-	fmt.Println("\n📊 RESULTS:")
+	fmt.Println("\nRESULTS:")
 	fmt.Println("==================================================")
 	fmt.Printf("Number of points: %d\n", *numPoints)
 	fmt.Printf("Seed: %d\n", *seed)
@@ -618,8 +618,8 @@ func main() {
 		fmt.Fprintf(file, "Time: %.2f seconds\n", elapsed.Seconds())
 		fmt.Fprintf(file, "Paths checked: %d\n", solver.visitedCount)
 		fmt.Fprintf(file, "Total paths: %d\n", solver.totalPermutations)
-		fmt.Printf("\n💾 The results are saved in %s\n", filename)
+		fmt.Printf("\nThe results are saved in %s\n", filename)
 	} else {
-		fmt.Printf("\n❌ Error saving file: %v\n", err)
+		fmt.Printf("\nError saving file: %v\n", err)
 	}
 }

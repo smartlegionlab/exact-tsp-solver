@@ -1,4 +1,4 @@
-// Copyright © 2025 Alexander Suvorov. All rights reserved.
+// Copyright © 2026 Alexander Suvorov. All rights reserved.
 package main
 
 import (
@@ -435,7 +435,7 @@ func main() {
 
 	if *numPoints > 20 {
 		totalPerms := calculateTotalPermutations(*numPoints - 1)
-		fmt.Printf("⚠️  WARNING: for %d points there will be approximately %s permutations\n",
+		fmt.Printf("WARNING: for %d points there will be approximately %s permutations\n",
 			*numPoints, formatLargeNumber(totalPerms))
 		fmt.Printf("This may take a considerable amount of time.\n")
 		fmt.Print("Continue? (y/n): ")
@@ -450,22 +450,22 @@ func main() {
 	solver := NewTSPSolver(*numPoints, *seed)
 
 	fmt.Println("==================================================")
-	fmt.Printf("🚀 TSP SOLVER (ORACLE v1) - %d POINTS\n", *numPoints)
-	fmt.Printf("🔢 SEED: %d\n", *seed)
+	fmt.Printf("TSP SOLVER (ORACLE v1) - %d POINTS\n", *numPoints)
+	fmt.Printf("SEED: %d\n", *seed)
 	fmt.Println("==================================================")
 
-	fmt.Println("\n📍 Coordinates of points:")
+	fmt.Println("\nCoordinates of points:")
 	for i, point := range solver.points {
 		fmt.Printf("   Dot %d: (%.2f, %.2f)\n", i, point.X, point.Y)
 	}
 
 	fmt.Println("\n1. Launching the multi-start greedy algorithm...")
 	greedyPath, greedyDistance := solver.multiStartGreedy()
-	fmt.Printf("   ✅ Multi-start greedy: length = %.2f\n", greedyDistance)
+	fmt.Printf("   Multi-start greedy: length = %.2f\n", greedyDistance)
 
 	brutePath, bruteDistance, elapsed := solver.bruteForce()
 
-	fmt.Println("\n📊 RESULTS:")
+	fmt.Println("\nRESULTS:")
 	fmt.Println("==================================================")
 	fmt.Printf("Number of points: %d\n", *numPoints)
 	fmt.Printf("Seed: %d\n", *seed)
@@ -501,8 +501,8 @@ func main() {
 		fmt.Fprintf(file, "Time: %.2f seconds\n", elapsed.Seconds())
 		fmt.Fprintf(file, "Paths checked: %d\n", solver.visitedCount)
 		fmt.Fprintf(file, "Total paths: %d\n", solver.totalPermutations)
-		fmt.Printf("\n💾 The results are saved in %s\n", filename)
+		fmt.Printf("\nThe results are saved in %s\n", filename)
 	} else {
-		fmt.Printf("\n❌ Error saving file: %v\n", err)
+		fmt.Printf("\nError saving file: %v\n", err)
 	}
 }
